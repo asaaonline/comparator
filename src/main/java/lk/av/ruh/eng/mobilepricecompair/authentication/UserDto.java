@@ -1,34 +1,21 @@
 package lk.av.ruh.eng.mobilepricecompair.authentication;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class UserDto {
 
-@Entity
-public class UserEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     private String name;
     private String tel;
     private String address;
     private String password;
 
-    public UserEntity(String name, String tel, String address, String password) {
+
+    public UserDto() {
+    }
+
+    public UserDto(String name, String tel, String address, String password) {
         this.name = name;
         this.tel = tel;
         this.address = address;
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

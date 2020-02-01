@@ -21,9 +21,14 @@ public class AuthController {
             @RequestBody LoginUser loginUser
     ) {
         return new ResponseEntity<Response>(
-                authResources.login(loginUser.getUserName(),
-                loginUser.getPassword()),
+                authResources.login(loginUser),
                 HttpStatus.ACCEPTED);
+    }
+
+    public ResponseEntity<Response> register(
+            @RequestBody UserDto userDTO
+    ) {
+        return new ResponseEntity<Response>(authResources.register(userDTO), HttpStatus.ACCEPTED);
     }
 }
 
