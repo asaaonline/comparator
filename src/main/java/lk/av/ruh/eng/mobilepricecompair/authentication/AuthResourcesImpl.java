@@ -2,8 +2,13 @@ package lk.av.ruh.eng.mobilepricecompair.authentication;
 
 import lk.av.ruh.eng.mobilepricecompair.commonModels.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class AuthResourcesImpl implements AuthResources {
@@ -17,7 +22,23 @@ public class AuthResourcesImpl implements AuthResources {
 
     @Override
     public Response login(LoginUser loginUser) {
-        return null;
+        UserEntity userEntitiesByName;
+
+        try {
+            userEntitiesByName  = authRepo.getUserEntitiesByName(loginUser.getUserName());
+            boolean matches = passwordEncoder.matches(userEntitiesByName.getPassword(), loginUser.getPassword());
+            if (!matches) {
+                return new Response("Password Wrong", null);
+            }
+
+        } catch (DisabledException e) {
+            return new Response("no user found", null);
+        }
+
+
+        return new Response("successful", userEntitiesByName.getId());
+
+
     }
 
     @Override
@@ -26,8 +47,8 @@ public class AuthResourcesImpl implements AuthResources {
         try {
             save = authRepo.save(
                     new UserEntity(userDTO.getName(),
-                    userDTO.getTel(), userDTO.getAddress(),
-                    passwordEncoder.encode(userDTO.getPassword())));
+                            userDTO.getTel(), userDTO.getAddress(),
+                            passwordEncoder.encode(userDTO.getPassword())));
         } catch (Exception e) {
             return new Response("failed", e.toString());
         }
