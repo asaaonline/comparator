@@ -15,12 +15,23 @@ public class StoreItemPriceEntity {
     @OneToOne
     private PhoneEntity phoneEntity;
     private Double price;
+    private int quntity;
 
-    public StoreItemPriceEntity(Long id, StoreEntity storeEntity, PhoneEntity phoneEntity, Double price) {
+
+    public StoreItemPriceEntity(Long id, StoreEntity storeEntity, PhoneEntity phoneEntity, Double price, int quntity) {
         this.id = id;
         this.storeEntity = storeEntity;
         this.phoneEntity = phoneEntity;
         this.price = price;
+        this.quntity = quntity;
+    }
+
+    public int getQuntity() {
+        return quntity;
+    }
+
+    public void setQuntity(int quntity) {
+        this.quntity = quntity;
     }
 
     public Long getId() {
