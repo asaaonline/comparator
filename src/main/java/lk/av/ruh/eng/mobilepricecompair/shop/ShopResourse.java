@@ -7,5 +7,5 @@ import java.util.List;
 public interface ShopResourse {
     void setPhoneId(String phoneId);
 
-    List<ShopQtyPriceDTO> getPricessEachShop();
+
 }

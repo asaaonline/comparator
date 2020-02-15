@@ -15,8 +15,7 @@ public class PhoneServiceImpl implements PhoneService {
 
     @Autowired
     private PhoneResourse phoneResourse;
-    @Autowired
-    private ShopResourse shopResourse;
+
 
     @Override
     public void setPhoneId(String id) {
@@ -28,8 +27,8 @@ public class PhoneServiceImpl implements PhoneService {
         try {
             phoneResourse.setId(this.phoneId);
             PhoneEntity phoneDetails = phoneResourse.getPhone();
-            shopResourse.setPhoneId(this.phoneId);
-            List<ShopQtyPriceDTO> pricessEachShop = shopResourse.getPricessEachShop();
+            phoneResourse.setId(this.phoneId);
+            List<ShopQtyPriceDTO> pricessEachShop = phoneResourse.getPricessEachShop();
 
             List<Object>objects=new ArrayList<>();
 

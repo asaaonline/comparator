@@ -22,17 +22,5 @@ public class ShopResourseImpl implements ShopResourse {
 
     }
 
-    @Override
-    public  List<ShopQtyPriceDTO> getPricessEachShop() {
-        List<Map<String, Object>> storeEntitiesBy = storeRepo.findStoreEntitiesBy(Long.parseLong(this.phoneId));
-        List<ShopQtyPriceDTO> shopQtyPriceDTOS=new ArrayList<>();
-        for (Map<String,Object> stringObjectMap:
-             storeEntitiesBy) {
-             ObjectMapper mapper = new ObjectMapper(); // jackson's objectmapper
-            ShopQtyPriceDTO pojo = mapper.convertValue(stringObjectMap, ShopQtyPriceDTO.class);
-            shopQtyPriceDTOS.add(pojo);
-        }
 
-        return shopQtyPriceDTOS;
-    }
 }
