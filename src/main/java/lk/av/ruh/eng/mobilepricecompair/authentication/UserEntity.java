@@ -1,7 +1,6 @@
 package lk.av.ruh.eng.mobilepricecompair.authentication;
 
-import lk.av.ruh.eng.mobilepricecompair.searchMobile.PhoneEntity;
-import net.bytebuddy.agent.builder.AgentBuilder;
+import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
 
 import javax.persistence.*;
 import java.util.List;

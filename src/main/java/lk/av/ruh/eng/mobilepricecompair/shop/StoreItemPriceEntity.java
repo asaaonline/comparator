@@ -1,10 +1,9 @@
 package lk.av.ruh.eng.mobilepricecompair.shop;
 
-import lk.av.ruh.eng.mobilepricecompair.searchMobile.PhoneEntity;
+import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity

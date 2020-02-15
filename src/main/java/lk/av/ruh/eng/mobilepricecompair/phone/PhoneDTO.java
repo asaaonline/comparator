@@ -1,39 +1,30 @@
-package lk.av.ruh.eng.mobilepricecompair.searchMobile;
+package lk.av.ruh.eng.mobilepricecompair.phone;
 
-import javax.persistence.Entity;
+import lk.av.ruh.eng.mobilepricecompair.searchMobile.BrendEntity;
+
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.xml.soap.SAAJResult;
+import java.io.Serializable;
 
-@Entity
-public class PhoneEntity {
-    @Id
-    private Long id;
+public class PhoneDTO implements Serializable {
+
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
     private BrendEntity brand;
     private float primaryCamera;
     private float secondryCam;
     private float prosesorSpeed;
     private float ram;
 
-    public PhoneEntity(Long id, String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram) {
-        this.id = id;
+    public PhoneDTO() {
+    }
+
+    public PhoneDTO(String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram) {
         this.name = name;
         this.brand = brand;
         this.primaryCamera = primaryCamera;
         this.secondryCam = secondryCam;
         this.prosesorSpeed = prosesorSpeed;
         this.ram = ram;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
