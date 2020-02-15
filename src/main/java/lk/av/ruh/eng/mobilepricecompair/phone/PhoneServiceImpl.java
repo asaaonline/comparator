@@ -1,8 +1,13 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
 import lk.av.ruh.eng.mobilepricecompair.commonModels.Response;
+import lk.av.ruh.eng.mobilepricecompair.shop.ShopResourse;
+import lk.av.ruh.eng.mobilepricecompair.shop.StoreItemPriceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PhoneServiceImpl implements PhoneService {
@@ -10,19 +15,29 @@ public class PhoneServiceImpl implements PhoneService {
 
     @Autowired
     private PhoneResourse phoneResourse;
+    @Autowired
+    private ShopResourse shopResourse;
+
     @Override
     public void setPhoneId(String id) {
-    this.phoneId=id;
+        this.phoneId = id;
     }
 
     @Override
     public Response getPhone() {
         try {
             phoneResourse.setId(this.phoneId);
-            PhoneEntity phone = phoneResourse.getPhone();
-            return new Response("Success",phone);
-        }catch (Exception e){
-            return new Response("failed",e.toString());
+            PhoneEntity phoneDetails = phoneResourse.getPhone();
+            shopResourse.setPhoneId(this.phoneId);
+            List<ShopQtyPriceDTO> pricessEachShop = shopResourse.getPricessEachShop();
+
+            List<Object>objects=new ArrayList<>();
+
+            objects.add(pricessEachShop);
+            objects.add(phoneDetails);
+            return new Response("Success", objects);
+        } catch (Exception e) {
+            return new Response("failed", e.toString());
         }
 
     }

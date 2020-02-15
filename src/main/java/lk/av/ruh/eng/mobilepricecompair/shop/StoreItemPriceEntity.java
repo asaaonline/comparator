@@ -11,27 +11,18 @@ public class StoreItemPriceEntity {
     @Id
     private Long id;
     @OneToOne
-    private StoreEntity storeEntity;
-    @OneToOne
     private PhoneEntity phoneEntity;
     private Double price;
     private int quntity;
 
-
-    public StoreItemPriceEntity(Long id, StoreEntity storeEntity, PhoneEntity phoneEntity, Double price, int quntity) {
+    public StoreItemPriceEntity(Long id, PhoneEntity phoneEntity, Double price, int quntity) {
         this.id = id;
-        this.storeEntity = storeEntity;
         this.phoneEntity = phoneEntity;
         this.price = price;
         this.quntity = quntity;
     }
 
-    public int getQuntity() {
-        return quntity;
-    }
-
-    public void setQuntity(int quntity) {
-        this.quntity = quntity;
+    public StoreItemPriceEntity() {
     }
 
     public Long getId() {
@@ -40,14 +31,6 @@ public class StoreItemPriceEntity {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public StoreEntity getStoreEntity() {
-        return storeEntity;
-    }
-
-    public void setStoreEntity(StoreEntity storeEntity) {
-        this.storeEntity = storeEntity;
     }
 
     public PhoneEntity getPhoneEntity() {
@@ -64,5 +47,13 @@ public class StoreItemPriceEntity {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public int getQuntity() {
+        return quntity;
+    }
+
+    public void setQuntity(int quntity) {
+        this.quntity = quntity;
     }
 }
