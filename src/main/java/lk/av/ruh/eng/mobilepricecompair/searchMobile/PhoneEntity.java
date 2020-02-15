@@ -2,12 +2,13 @@ package lk.av.ruh.eng.mobilepricecompair.searchMobile;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.xml.soap.SAAJResult;
 
 @Entity
 public class PhoneEntity {
-
+    @Id
     private Long id;
     private String name;
     @ManyToOne(fetch = FetchType.LAZY)
