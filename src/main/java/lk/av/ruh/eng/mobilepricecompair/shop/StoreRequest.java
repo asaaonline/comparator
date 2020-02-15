@@ -2,15 +2,15 @@ package lk.av.ruh.eng.mobilepricecompair.shop;
 
 import java.io.Serializable;
 
-public class ShopRequest implements Serializable {
+public class StoreRequest implements Serializable {
     private String name;
     private String address;
     private String tell;
 
-    public ShopRequest() {
+    public StoreRequest() {
     }
 
-    public ShopRequest(String name, String address, String tell) {
+    public StoreRequest(String name, String address, String tell) {
         this.name = name;
         this.address = address;
         this.tell = tell;

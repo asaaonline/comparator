@@ -13,7 +13,7 @@ public class StoreController {
 
     @PostMapping("add")
     public ResponseEntity<Response> addStore(
-            @RequestBody ShopRequest shopRequest
+            @RequestBody StoreRequest storeRequest
     ){
         return null;
     }
