@@ -1,9 +1,10 @@
 package lk.av.ruh.eng.mobilepricecompair.authentication;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lk.av.ruh.eng.mobilepricecompair.searchMobile.PhoneEntity;
+import net.bytebuddy.agent.builder.AgentBuilder;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class UserEntity {
@@ -15,12 +16,23 @@ public class UserEntity {
     private String tel;
     private String address;
     private String password;
+    @OneToMany
+    private List<PhoneEntity> favorites;
 
-    public UserEntity(String name, String tel, String address, String password) {
+    public UserEntity(String name, String tel, String address, String password, List<PhoneEntity> favorites) {
         this.name = name;
         this.tel = tel;
         this.address = address;
         this.password = password;
+        this.favorites = favorites;
+    }
+
+    public List<PhoneEntity> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(List<PhoneEntity> favorites) {
+        this.favorites = favorites;
     }
 
     public Long getId() {
