@@ -25,6 +25,7 @@ public class AuthController {
                 HttpStatus.ACCEPTED);
     }
 
+    @PostMapping("register")
     public ResponseEntity<Response> register(
             @RequestBody UserDto userDTO
     ) {
