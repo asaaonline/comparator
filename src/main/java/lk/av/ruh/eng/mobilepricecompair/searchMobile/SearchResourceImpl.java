@@ -1,6 +1,8 @@
 package lk.av.ruh.eng.mobilepricecompair.searchMobile;
 
+
 import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
+import lk.av.ruh.eng.mobilepricecompair.phone.PhoneRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +26,6 @@ public class SearchResourceImpl implements SearchResource {
     public List<PhoneEntity> search() {
 
      return phoneRepo.findByNameContaining(this.searchParam);
-
 
     }
 }

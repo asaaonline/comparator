@@ -1,11 +1,11 @@
-package lk.av.ruh.eng.mobilepricecompair.searchMobile;
+package lk.av.ruh.eng.mobilepricecompair.phone;
 
-import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Set;
 
+@Repository
 public interface PhoneRepo extends CrudRepository<PhoneEntity,Long> {
     List<PhoneEntity> findByNameContaining(String name);
 }
