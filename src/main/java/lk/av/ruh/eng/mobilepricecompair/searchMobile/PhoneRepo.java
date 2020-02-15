@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Set;
 
 public interface PhoneRepo extends CrudRepository<PhoneEntity,Long> {
-    List<PhoneEntity> findByName(String name);
+    List<PhoneEntity> findByNameContaining(String name);
 }

@@ -20,6 +20,9 @@ public class PhoneEntity {
     private float prosesorSpeed;
     private float ram;
 
+    public PhoneEntity() {
+    }
+
     public PhoneEntity(Long id, String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram) {
         this.id = id;
         this.name = name;

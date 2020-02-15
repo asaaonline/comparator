@@ -23,7 +23,7 @@ public class SearchResourceImpl implements SearchResource {
     @Override
     public List<PhoneEntity> search() {
 
-     return phoneRepo.findByName(this.searchParam);
+     return phoneRepo.findByNameContaining(this.searchParam);
 
 
     }
