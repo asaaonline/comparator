@@ -18,6 +18,9 @@ public class UserEntity {
     @OneToMany
     private List<PhoneEntity> favorites;
 
+    public UserEntity() {
+    }
+
     public UserEntity(String name, String tel, String address, String password, List<PhoneEntity> favorites) {
         this.name = name;
         this.tel = tel;

@@ -34,14 +34,7 @@ public class PhoneResourseImpl implements PhoneResourse {
     public ArrayList<Object> getPricessEachShop() {
         List<StoreItemPriceEntity> storeItemPriceEntitiesByPhoneEntity = shopQtyPriceDTOS.findStoreItemPriceEntitiesByPhoneEntity(this.phoneEntity);
 
-//        List<Map<String, Object>> storeEntitiesBy = phoneRepo.findStoreEntitiesBy(Long.parseLong(this.phoneId));
-//        List<ShopQtyPriceDTO> shopQtyPriceDTOS=new ArrayList<>();
-//        for (Map<String,Object> stringObjectMap:
-//                storeEntitiesBy) {
-//            ObjectMapper mapper = new ObjectMapper(); // jackson's objectmapper
-//            ShopQtyPriceDTO pojo = mapper.convertValue(stringObjectMap, ShopQtyPriceDTO.class);
-//            shopQtyPriceDTOS.add(pojo);
-//        }
+
         ArrayList<Object> objects = new ArrayList<>();
         objects.add(this.phoneEntity);
         objects.add(storeItemPriceEntitiesByPhoneEntity);
