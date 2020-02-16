@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RestController("phone")
+@CrossOrigin("*")
+@RequestMapping("phone")
 public class PhoneController {
     @Autowired
     private PhoneService phoneService;
