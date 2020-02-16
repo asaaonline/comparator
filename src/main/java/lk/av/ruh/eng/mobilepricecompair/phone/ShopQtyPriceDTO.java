@@ -10,18 +10,28 @@ public class ShopQtyPriceDTO implements Serializable {
     private String name;
     private String tell;
     private Double price;
+    private String url;
     private int quntity;
 
     public ShopQtyPriceDTO() {
     }
 
-    public ShopQtyPriceDTO(BigInteger id, String address, String name, String tell, Double price, int quntity) {
+    public ShopQtyPriceDTO(BigInteger id, String address, String name, String tell, Double price, String url, int quntity) {
         this.id = id;
         this.address = address;
         this.name = name;
         this.tell = tell;
         this.price = price;
+        this.url = url;
         this.quntity = quntity;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public BigInteger getId() {

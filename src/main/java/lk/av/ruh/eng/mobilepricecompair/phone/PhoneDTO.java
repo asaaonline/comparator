@@ -14,17 +14,27 @@ public class PhoneDTO implements Serializable {
     private float secondryCam;
     private float prosesorSpeed;
     private float ram;
+    private String url;
 
     public PhoneDTO() {
     }
 
-    public PhoneDTO(String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram) {
+    public PhoneDTO(String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram, String url) {
         this.name = name;
         this.brand = brand;
         this.primaryCamera = primaryCamera;
         this.secondryCam = secondryCam;
         this.prosesorSpeed = prosesorSpeed;
         this.ram = ram;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {

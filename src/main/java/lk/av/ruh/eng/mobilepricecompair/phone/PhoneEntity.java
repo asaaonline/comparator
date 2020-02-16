@@ -19,11 +19,12 @@ public class PhoneEntity {
     private float secondryCam;
     private float prosesorSpeed;
     private float ram;
+    private String url;
 
     public PhoneEntity() {
     }
 
-    public PhoneEntity(Long id, String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram) {
+    public PhoneEntity(Long id, String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram, String url) {
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -31,6 +32,15 @@ public class PhoneEntity {
         this.secondryCam = secondryCam;
         this.prosesorSpeed = prosesorSpeed;
         this.ram = ram;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Long getId() {
