@@ -1,4 +1,4 @@
-package lk.av.ruh.eng.mobilepricecompair.searchMobile;
+package lk.av.ruh.eng.mobilepricecompair.category;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class BrendEntity {
+public class BrandEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String brandName;
 
-    public BrendEntity() {
+    public BrandEntity() {
     }
 
-    public BrendEntity(Long id, String brandName) {
+    public BrandEntity(Long id, String brandName) {
         this.id = id;
         this.brandName = brandName;
     }

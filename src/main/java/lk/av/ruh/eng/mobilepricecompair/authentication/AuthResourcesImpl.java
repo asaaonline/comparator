@@ -26,12 +26,12 @@ public class AuthResourcesImpl implements AuthResources {
 
         try {
             userEntitiesByName  = authRepo.getUserEntitiesByName(loginUser.getUserName());
-            boolean matches = passwordEncoder.matches(userEntitiesByName.getPassword(), loginUser.getPassword());
+            boolean matches = passwordEncoder.matches( loginUser.getPassword(),userEntitiesByName.getPassword());
             if (!matches) {
                 return new Response("Password Wrong", null);
             }
 
-        } catch (DisabledException e) {
+        } catch (Exception e) {
             return new Response("no user found", null);
         }
 

@@ -1,9 +1,8 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
-import lk.av.ruh.eng.mobilepricecompair.searchMobile.BrendEntity;
+import lk.av.ruh.eng.mobilepricecompair.category.BrandEntity;
 
 import javax.persistence.*;
-import javax.xml.soap.SAAJResult;
 
 @Entity
 public class PhoneEntity {
@@ -12,7 +11,7 @@ public class PhoneEntity {
     private Long id;
     private String name;
     @ManyToOne
-    private BrendEntity brand;
+    private BrandEntity brand;
     private float primaryCamera;
     private float secondryCam;
     private float prosesorSpeed;
@@ -22,7 +21,7 @@ public class PhoneEntity {
     public PhoneEntity() {
     }
 
-    public PhoneEntity(Long id, String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram, String url) {
+    public PhoneEntity(Long id, String name, BrandEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram, String url) {
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -57,11 +56,11 @@ public class PhoneEntity {
         this.name = name;
     }
 
-    public BrendEntity getBrand() {
+    public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(BrendEntity brand) {
+    public void setBrand(BrandEntity brand) {
         this.brand = brand;
     }
 

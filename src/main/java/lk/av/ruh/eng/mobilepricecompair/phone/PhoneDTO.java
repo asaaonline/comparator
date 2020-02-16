@@ -1,15 +1,13 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
-import lk.av.ruh.eng.mobilepricecompair.searchMobile.BrendEntity;
+import lk.av.ruh.eng.mobilepricecompair.category.BrandEntity;
 
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 public class PhoneDTO implements Serializable {
 
     private String name;
-    private BrendEntity brand;
+    private BrandEntity brand;
     private float primaryCamera;
     private float secondryCam;
     private float prosesorSpeed;
@@ -19,7 +17,7 @@ public class PhoneDTO implements Serializable {
     public PhoneDTO() {
     }
 
-    public PhoneDTO(String name, BrendEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram, String url) {
+    public PhoneDTO(String name, BrandEntity brand, float primaryCamera, float secondryCam, float prosesorSpeed, float ram, String url) {
         this.name = name;
         this.brand = brand;
         this.primaryCamera = primaryCamera;
@@ -45,11 +43,11 @@ public class PhoneDTO implements Serializable {
         this.name = name;
     }
 
-    public BrendEntity getBrand() {
+    public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(BrendEntity brand) {
+    public void setBrand(BrandEntity brand) {
         this.brand = brand;
     }
 
