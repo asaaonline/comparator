@@ -27,7 +27,7 @@ public class PhoneServiceImpl implements PhoneService {
             phoneResourse.setId(this.phoneId);
             PhoneEntity phoneDetails = phoneResourse.getPhone();
             phoneResourse.setPhoneEntity(phoneDetails);
-            List<StoreItemPriceEntity> pricessEachShop = phoneResourse.getPricessEachShop();
+            ArrayList<Object> pricessEachShop = phoneResourse.getPricessEachShop();
 
 
             return new Response("Success", pricessEachShop);

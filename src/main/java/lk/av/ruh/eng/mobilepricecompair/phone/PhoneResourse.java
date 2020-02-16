@@ -1,14 +1,12 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
-import lk.av.ruh.eng.mobilepricecompair.shop.StoreItemPriceEntity;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public interface PhoneResourse {
     void setId(String phoneId);
 
     PhoneEntity getPhone();
-    List<StoreItemPriceEntity> getPricessEachShop();
+    ArrayList<Object> getPricessEachShop();
 
 
     void setPhoneEntity(PhoneEntity phoneDetails);

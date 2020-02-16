@@ -3,9 +3,10 @@ package lk.av.ruh.eng.mobilepricecompair.shop;
 import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class StoreItemPriceEntity {
+public class StoreItemPriceEntity implements Serializable {
     @Id
     private Long id;
     @OneToOne

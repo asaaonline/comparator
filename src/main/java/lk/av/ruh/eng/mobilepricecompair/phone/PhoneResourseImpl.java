@@ -1,13 +1,11 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lk.av.ruh.eng.mobilepricecompair.shop.StoreItemPriceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -33,7 +31,7 @@ public class PhoneResourseImpl implements PhoneResourse {
         return byId.get();
     }
 
-    public List<StoreItemPriceEntity> getPricessEachShop() {
+    public ArrayList<Object> getPricessEachShop() {
         List<StoreItemPriceEntity> storeItemPriceEntitiesByPhoneEntity = shopQtyPriceDTOS.findStoreItemPriceEntitiesByPhoneEntity(this.phoneEntity);
 
 //        List<Map<String, Object>> storeEntitiesBy = phoneRepo.findStoreEntitiesBy(Long.parseLong(this.phoneId));
@@ -44,8 +42,12 @@ public class PhoneResourseImpl implements PhoneResourse {
 //            ShopQtyPriceDTO pojo = mapper.convertValue(stringObjectMap, ShopQtyPriceDTO.class);
 //            shopQtyPriceDTOS.add(pojo);
 //        }
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add(this.phoneEntity);
+        objects.add(storeItemPriceEntitiesByPhoneEntity);
 
-        return storeItemPriceEntitiesByPhoneEntity;
+
+        return objects;
     }
 
     @Override
