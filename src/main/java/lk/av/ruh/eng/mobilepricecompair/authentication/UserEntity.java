@@ -15,18 +15,29 @@ public class UserEntity {
     private String tel;
     private String address;
     private String password;
+    private String email;
     @OneToMany
     private List<PhoneEntity> favorites;
 
     public UserEntity() {
     }
 
-    public UserEntity(String name, String tel, String address, String password, List<PhoneEntity> favorites) {
+    public UserEntity(String name, String tel, String address, String password, String email, List<PhoneEntity> favorites) {
         this.name = name;
         this.tel = tel;
         this.address = address;
         this.password = password;
+        this.email = email;
         this.favorites = favorites;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public List<PhoneEntity> getFavorites() {
