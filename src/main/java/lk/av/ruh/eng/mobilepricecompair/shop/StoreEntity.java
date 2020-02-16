@@ -14,7 +14,10 @@ public class StoreEntity {
     private String address;
     private String tell;
     private String imgUrl;
-    @OneToMany
+    @OneToMany(
+            mappedBy = "storeEntity",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private List<StoreItemPriceEntity> storeItemPriceEntities;
 
 

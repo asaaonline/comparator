@@ -2,9 +2,7 @@ package lk.av.ruh.eng.mobilepricecompair.shop;
 
 import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class StoreItemPriceEntity {
@@ -14,6 +12,8 @@ public class StoreItemPriceEntity {
     private PhoneEntity phoneEntity;
     private Double price;
     private int quntity;
+    @ManyToOne
+    private StoreEntity storeEntity;
 
     public StoreItemPriceEntity(Long id, PhoneEntity phoneEntity, Double price, int quntity) {
         this.id = id;
@@ -22,7 +22,23 @@ public class StoreItemPriceEntity {
         this.quntity = quntity;
     }
 
+    public StoreItemPriceEntity(Long id, PhoneEntity phoneEntity, Double price, int quntity, StoreEntity storeEntity) {
+        this.id = id;
+        this.phoneEntity = phoneEntity;
+        this.price = price;
+        this.quntity = quntity;
+        this.storeEntity = storeEntity;
+    }
+
     public StoreItemPriceEntity() {
+    }
+
+    public StoreEntity getStoreEntity() {
+        return storeEntity;
+    }
+
+    public void setStoreEntity(StoreEntity storeEntity) {
+        this.storeEntity = storeEntity;
     }
 
     public Long getId() {

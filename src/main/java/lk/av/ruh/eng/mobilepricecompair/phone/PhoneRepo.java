@@ -1,5 +1,6 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
+import lk.av.ruh.eng.mobilepricecompair.shop.StoreItemPriceEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -15,4 +16,6 @@ public interface PhoneRepo extends CrudRepository<PhoneEntity,Long> {
             "INNER JOIN store_item_price_entity on store_entity_store_item_price_entities.store_item_price_entities_id=store_item_price_entity.id\n" +
             "INNER JOIN phone_entity ON  phone_entity.id=store_item_price_entity.phone_entity_id WHERE phone_entity.id=?1",nativeQuery = true)
     List<Map<String,Object>> findStoreEntitiesBy(Long id);
+
+
 }

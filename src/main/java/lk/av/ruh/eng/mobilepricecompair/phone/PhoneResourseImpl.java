@@ -1,6 +1,7 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lk.av.ruh.eng.mobilepricecompair.shop.StoreItemPriceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ import java.util.Optional;
 public class PhoneResourseImpl implements PhoneResourse {
 
     private String phoneId;
+    private PhoneEntity phoneEntity;
+    @Autowired
+    private PhonePriceRepo shopQtyPriceDTOS;
 
     @Autowired
     private PhoneRepo phoneRepo;
@@ -29,16 +33,23 @@ public class PhoneResourseImpl implements PhoneResourse {
         return byId.get();
     }
 
-    public List<ShopQtyPriceDTO> getPricessEachShop() {
-        List<Map<String, Object>> storeEntitiesBy = phoneRepo.findStoreEntitiesBy(Long.parseLong(this.phoneId));
-        List<ShopQtyPriceDTO> shopQtyPriceDTOS=new ArrayList<>();
-        for (Map<String,Object> stringObjectMap:
-                storeEntitiesBy) {
-            ObjectMapper mapper = new ObjectMapper(); // jackson's objectmapper
-            ShopQtyPriceDTO pojo = mapper.convertValue(stringObjectMap, ShopQtyPriceDTO.class);
-            shopQtyPriceDTOS.add(pojo);
-        }
+    public List<StoreItemPriceEntity> getPricessEachShop() {
+        List<StoreItemPriceEntity> storeItemPriceEntitiesByPhoneEntity = shopQtyPriceDTOS.findStoreItemPriceEntitiesByPhoneEntity(this.phoneEntity);
 
-        return shopQtyPriceDTOS;
+//        List<Map<String, Object>> storeEntitiesBy = phoneRepo.findStoreEntitiesBy(Long.parseLong(this.phoneId));
+//        List<ShopQtyPriceDTO> shopQtyPriceDTOS=new ArrayList<>();
+//        for (Map<String,Object> stringObjectMap:
+//                storeEntitiesBy) {
+//            ObjectMapper mapper = new ObjectMapper(); // jackson's objectmapper
+//            ShopQtyPriceDTO pojo = mapper.convertValue(stringObjectMap, ShopQtyPriceDTO.class);
+//            shopQtyPriceDTOS.add(pojo);
+//        }
+
+        return storeItemPriceEntitiesByPhoneEntity;
+    }
+
+    @Override
+    public void setPhoneEntity(PhoneEntity phoneDetails) {
+        this.phoneEntity=phoneDetails;
     }
 }
