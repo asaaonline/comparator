@@ -16,11 +16,7 @@ public class ShopResourseImpl implements ShopResourse {
     @Autowired
     private StoreRepo storeRepo;
 
-    @Override
-    public void setPhoneId(String phoneId) {
-        this.phoneId = phoneId;
 
-    }
 
 
 }

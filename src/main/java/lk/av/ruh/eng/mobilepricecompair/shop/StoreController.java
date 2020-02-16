@@ -14,6 +14,7 @@ public class StoreController {
     public ResponseEntity<Response> addStore(
             @RequestBody StoreRequest storeRequest
     ) {
+
         return null;
     }
 

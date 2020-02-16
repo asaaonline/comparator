@@ -13,6 +13,7 @@ public class StoreEntity {
     private String name;
     private String address;
     private String tell;
+    private String imgUrl;
     @OneToMany
     private List<StoreItemPriceEntity> storeItemPriceEntities;
 
@@ -20,11 +21,20 @@ public class StoreEntity {
     public StoreEntity() {
     }
 
-    public StoreEntity(Long id, String name, String address, String tell, List<StoreItemPriceEntity> storeItemPriceEntities) {
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public StoreEntity(Long id, String name, String address, String tell, String imgUrl, List<StoreItemPriceEntity> storeItemPriceEntities) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.tell = tell;
+        this.imgUrl = imgUrl;
         this.storeItemPriceEntities = storeItemPriceEntities;
     }
 
