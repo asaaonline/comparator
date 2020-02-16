@@ -1,8 +1,6 @@
 package lk.av.ruh.eng.mobilepricecompair.phone;
 
 import lk.av.ruh.eng.mobilepricecompair.commonModels.Response;
-import lk.av.ruh.eng.mobilepricecompair.shop.ShopResourse;
-import lk.av.ruh.eng.mobilepricecompair.shop.StoreItemPriceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

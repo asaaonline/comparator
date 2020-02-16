@@ -38,6 +38,13 @@ public class StoreEntity {
         this.storeItemPriceEntities = storeItemPriceEntities;
     }
 
+    public StoreEntity(String name, String address, String tell, String imgUrl) {
+        this.name = name;
+        this.address = address;
+        this.tell = tell;
+        this.imgUrl = imgUrl;
+    }
+
     public Long getId() {
         return id;
     }

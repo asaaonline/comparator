@@ -6,14 +6,24 @@ public class StoreRequest implements Serializable {
     private String name;
     private String address;
     private String tell;
+    private String url;
 
     public StoreRequest() {
     }
 
-    public StoreRequest(String name, String address, String tell) {
+    public StoreRequest(String name, String address, String tell, String url) {
         this.name = name;
         this.address = address;
         this.tell = tell;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {

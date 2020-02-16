@@ -4,8 +4,10 @@ import lk.av.ruh.eng.mobilepricecompair.phone.ShopQtyPriceDTO;
 
 import java.util.List;
 
-public interface ShopResourse {
+public interface StoreResourse {
 
 
+    void setStoreRequest(StoreRequest storeRequest);
 
+    StoreEntity save();
 }

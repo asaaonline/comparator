@@ -1,6 +1,8 @@
 package lk.av.ruh.eng.mobilepricecompair.shop;
 
 import lk.av.ruh.eng.mobilepricecompair.commonModels.Response;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -9,13 +11,16 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin("*")
 @RequestMapping("StoreApi")
 public class StoreController {
+    @Autowired
+    private StoreService storeService;
 
     @PostMapping("addStore")
     public ResponseEntity<Response> addStore(
             @RequestBody StoreRequest storeRequest
     ) {
 
-        return null;
+        storeService.addStoreReqiest(storeRequest);
+        return new ResponseEntity<Response>(storeService.save(), HttpStatus.ACCEPTED);
     }
 
     @PutMapping("{id}/addPhone")
