@@ -9,6 +9,9 @@ public class BrendEntity {
     private Long id;
     private String brandName;
 
+    public BrendEntity() {
+    }
+
     public BrendEntity(Long id, String brandName) {
         this.id = id;
         this.brandName = brandName;

@@ -13,7 +13,7 @@ public class PhoneEntity {
     @Id
     private Long id;
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private BrendEntity brand;
     private float primaryCamera;
     private float secondryCam;
