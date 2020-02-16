@@ -2,15 +2,13 @@ package lk.av.ruh.eng.mobilepricecompair.phone;
 
 import lk.av.ruh.eng.mobilepricecompair.searchMobile.BrendEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.xml.soap.SAAJResult;
 
 @Entity
 public class PhoneEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     @ManyToOne

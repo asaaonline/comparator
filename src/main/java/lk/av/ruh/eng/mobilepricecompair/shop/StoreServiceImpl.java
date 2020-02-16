@@ -18,6 +18,7 @@ public class StoreServiceImpl implements StoreService {
     public Response save() {
         storeResourse.setStoreRequest(this.storeRequest);
         StoreEntity save = storeResourse.save();
-        return null;
+
+        return new Response("Sucessfull",save);
     }
 }
