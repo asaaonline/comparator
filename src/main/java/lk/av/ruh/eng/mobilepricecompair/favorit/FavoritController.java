@@ -37,7 +37,10 @@ public class FavoritController {
             @PathVariable String uId,
             @RequestParam Long phoneId
     ) {
-        return null;
+        favoritService.setUser(uId);
+        favoritService.setPhoneId(phoneId);
+        return new ResponseEntity<Response>(favoritService.addToFavorite(),HttpStatus.ACCEPTED);
+
     }
 
 }

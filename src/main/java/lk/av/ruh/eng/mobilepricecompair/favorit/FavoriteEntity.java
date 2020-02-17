@@ -6,6 +6,9 @@ import lk.av.ruh.eng.mobilepricecompair.phone.PhoneEntity;
 import javax.persistence.*;
 
 @Entity
+@Table(
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"user_entity_id", "phone_entity_id"})}
+)
 public class FavoriteEntity {
 
     @Id
@@ -23,6 +26,11 @@ public class FavoriteEntity {
     }
 
     public FavoriteEntity() {
+    }
+
+    public FavoriteEntity(UserEntity userEntity, PhoneEntity phoneEntity) {
+        this.userEntity = userEntity;
+        this.phoneEntity = phoneEntity;
     }
 
     public Long getId() {

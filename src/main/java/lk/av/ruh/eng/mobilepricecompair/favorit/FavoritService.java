@@ -7,4 +7,7 @@ public interface FavoritService {
 
     Response getFavorite();
 
+    void setPhoneId(Long phoneId);
+
+    Response addToFavorite();
 }
