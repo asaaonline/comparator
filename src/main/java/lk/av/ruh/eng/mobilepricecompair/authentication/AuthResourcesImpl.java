@@ -7,8 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Component
 public class AuthResourcesImpl implements AuthResources {
@@ -35,8 +34,8 @@ public class AuthResourcesImpl implements AuthResources {
             return new Response("no user found", null);
         }
 
-
-        return new Response("successful", userEntitiesByName.getId());
+        userEntitiesByName.setPassword(null);
+        return new Response("successful", userEntitiesByName);
 
 
     }
@@ -52,6 +51,7 @@ public class AuthResourcesImpl implements AuthResources {
         } catch (Exception e) {
             return new Response("failed", e.toString());
         }
-        return new Response("successful", save.getId());
+        save.setPassword(null);
+        return new Response("successful", save);
     }
 }
