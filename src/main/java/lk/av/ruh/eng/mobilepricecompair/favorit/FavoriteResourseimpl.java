@@ -19,7 +19,7 @@ public class FavoriteResourseimpl implements FavoritResourse {
 
     @Override
     public List<FavoriteEntity> getFavorite() {
-        return favoriteRepo.findFavoriteEntitiesByUserEntityId(this.userId);
+        return favoriteRepo.findFavoriteEntitiesByUserEntityId(Long.parseLong(this.userId));
 
     }
 }
