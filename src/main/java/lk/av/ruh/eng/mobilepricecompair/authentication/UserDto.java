@@ -6,9 +6,17 @@ public class UserDto {
     private String tel;
     private String address;
     private String password;
-
+private String email;
 
     public UserDto() {
+    }
+
+    public UserDto(String name, String tel, String address, String password, String email) {
+        this.name = name;
+        this.tel = tel;
+        this.address = address;
+        this.password = password;
+        this.email = email;
     }
 
     public UserDto(String name, String tel, String address, String password) {
@@ -16,6 +24,14 @@ public class UserDto {
         this.tel = tel;
         this.address = address;
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {

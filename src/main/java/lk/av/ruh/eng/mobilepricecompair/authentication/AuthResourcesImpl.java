@@ -48,7 +48,7 @@ public class AuthResourcesImpl implements AuthResources {
             save = authRepo.save(
                     new UserEntity(userDTO.getName(),
                             userDTO.getTel(), userDTO.getAddress(),
-                            passwordEncoder.encode(userDTO.getPassword()),null));
+                            passwordEncoder.encode(userDTO.getPassword()),userDTO.getEmail(),null));
         } catch (Exception e) {
             return new Response("failed", e.toString());
         }
